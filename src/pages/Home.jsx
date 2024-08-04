@@ -38,7 +38,7 @@ const Home = () => {
     }
     else{
       screenScale =[3,3,3];
-      screenPosition =[0,-4,-4];
+      screenPosition =[0,-2,-4];
     }
 
     return [screenScale,screenPosition ,rotation];

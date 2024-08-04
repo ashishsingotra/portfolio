@@ -4,6 +4,8 @@ import emailjs from '@emailjs/browser'
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import Fox from "../models/Fox";
+import useAlert from "../hooks/useAlert";
+import Alert from "../components/Alert";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -14,6 +16,7 @@ const Contact = () => {
 
   const [currentAnimation, setcurrentAnimation] = useState('idle')
 
+  const {alert , showAlert , hideAlert} = useAlert() ;
   const handleChange = (e) => {
     setform({...form , [e.target.name] : e.target.value})
   };
@@ -37,10 +40,14 @@ const Contact = () => {
     ).then(() =>{
       setisLoading(false);
       setform({name : '' , email : '' , message : ''});
+      showAlert({show:true , text : '' , type : 'success'})
+
       setTimeout(()=>{
         setcurrentAnimation('idle');
+        hideAlert();
       },3000)
     }).catch((error)=>{
+      showAlert({show:true , text : 'I didnt recieve your message' , type : 'danger'})
       setisLoading(false);
       setcurrentAnimation('idle');
       console.log(error)
@@ -50,6 +57,7 @@ const Contact = () => {
 
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
+      {alert.show && <Alert {...alert} /> }
       <div className="flex-1 min-w-[50%]">
         <h1 className="head-text"> Get in touch</h1>
 
@@ -110,7 +118,8 @@ const Contact = () => {
               {isLoading ? 'Sending' : 'Send Meassage'}
           </button>
         </form>
-        <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
+      </div>
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
           <Canvas
           camera ={{
               position :[0,0,5],
@@ -131,7 +140,6 @@ const Contact = () => {
             </Suspense>
           </Canvas>
         </div>
-      </div>
     </section>
   )
 }
