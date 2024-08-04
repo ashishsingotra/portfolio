@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import Fox from "../models/Fox";
 import useAlert from "../hooks/useAlert";
 import Alert from "../components/Alert";
+import CTA from "../components/CTA";
 
 const Contact = () => {
   const formRef = useRef(null);
