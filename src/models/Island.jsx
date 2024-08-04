@@ -66,15 +66,35 @@ const Island = ({ isRotating ,setIsRotating ,setCurrentStage, ...props}) => {
     }
   }
 
+  const handleTouchStart = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIsRotating(true);
+  
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    lastX.current = clientX;
+  }
+  
+  const handleTouchEnd = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setIsRotating(false);
+  }
+  
+  const handleTouchMove = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+
   useEffect(()=>{
      // Add event listeners for pointer, keyboard and touch events
   const canvas = gl.domElement;
   canvas.addEventListener("pointerdown", handlePositionDown);
   canvas.addEventListener("pointerup", handlePositionUp);
   canvas.addEventListener("pointermove", handlePositionMove);
-  canvas.addEventListener("touchstart", handlePositionDown);
-  canvas.addEventListener("touchmove", handlePositionMove);
-  canvas.addEventListener("touchend", handlePositionUp);
+  canvas.addEventListener("touchstart", handleTouchStart);
+  canvas.addEventListener("touchmove", handleTouchMove);
+  canvas.addEventListener("touchend", handleTouchEnd);
   window.addEventListener("keydown", handleKeyDown);
   window.addEventListener("keyup", handleKeyUp);
 
@@ -83,9 +103,9 @@ const Island = ({ isRotating ,setIsRotating ,setCurrentStage, ...props}) => {
     canvas.removeEventListener("pointerdown", handlePositionDown);
     canvas.removeEventListener("pointerup", handlePositionUp);
     canvas.removeEventListener("pointermove", handlePositionMove);
-    canvas.removeEventListener("touchstart", handlePositionDown);
-    canvas.removeEventListener("touchmove", handlePositionMove);
-    canvas.removeEventListener("touchend", handlePositionUp);
+    canvas.removeEventListener("touchstart", handleTouchStart);
+    canvas.removeEventListener("touchmove", handleTouchMove);
+    canvas.removeEventListener("touchend", handleTouchEnd);
     window.removeEventListener("keydown", handleKeyDown);
     window.removeEventListener("keyup", handleKeyUp);
   }
@@ -158,4 +178,5 @@ const Island = ({ isRotating ,setIsRotating ,setCurrentStage, ...props}) => {
     </a.group>
   )
 }
+
 export default Island;
