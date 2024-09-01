@@ -114,7 +114,7 @@ export const projects = [
     {
         iconUrl: pricewise,
         theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
+        name: 'Restaurant Order Management',
         description: ' It is a System in Java streamlines ordering, manages menu items, processes payments, and tracks orders. It can be used by staff or integrated into a customer app for a digital experience. Features, architecture, and technology stack are key components of the project',
         link: 'https://github.com/ashishsingotra/Online-Food-Order',
     }
