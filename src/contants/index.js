@@ -74,7 +74,7 @@ export const experiences = [
         company_name: "Tata Consultancy developer",
         icon: tcs,
         iconBg: "#accbe1",
-        date: "March 2020 - April 2021",
+        date: "December 2021 - Present",
         points: [
             "Developed and maintained robust Java-based applications using frameworks like Spring Boot and Hibernate, enhancing application performance and reliability.",
             "Designed and implemented RESTful APIs to integrate with front-end services, enabling seamless data exchange and improving user experience.",
