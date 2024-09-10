@@ -37,9 +37,9 @@ cd portfolio
 ```
 3.Install the project dependencies:
 ```bash
-4.npm install
+npm install
 ```
-5.To run the development server:
+4.To run the development server:
 ```bash
 npm run dev
 ```
