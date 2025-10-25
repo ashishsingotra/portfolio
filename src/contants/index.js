@@ -74,13 +74,28 @@ export const experiences = [
         company_name: "Tata Consultancy developer",
         icon: tcs,
         iconBg: "#accbe1",
-        date: "December 2021 - Present",
+        date: "December 2021 - January 2025",
         points: [
             "Developed and maintained robust Java-based applications using frameworks like Spring Boot and Hibernate, enhancing application performance and reliability.",
             "Designed and implemented RESTful APIs to integrate with front-end services, enabling seamless data exchange and improving user experience.",
             "Collaborated with cross-functional teams including front-end developers, QA testers, and product managers to deliver high-quality software solutions on time.",
             "Implemented robust security measures, including authentication and authorization protocols, to protect sensitive data and maintain compliance with industry standards.",
             "Developed and executed automated test cases using JUnit and Mockito, achieving a 30% reduction in post-release bugs and ensuring high-quality deliverables.",
+        ],
+    },
+    {
+        title: "Java Full Stack Developer",
+        company_name: "Accolite",
+        icon: tcs,
+        iconBg: "#accbe1",
+        date: "March 2025 - Present",
+        points: [
+            "Developed and optimized data processing modules in Java, improving system efficiency and scalability for large-scale data operations.",
+            "Implemented RESTful APIs to serve customer-specific data requests, ensuring reliable and efficient communication between backend services and client applications.",
+            "Designed and maintained SQL stored procedures utilized by APIs for on-demand data processing, enhancing performance and meeting dynamic customer requirements.",
+            "Debugged and enhanced existing scripts written in Python and Perl to integrate new functionalities, streamline workflows, and support evolving business needs.",
+            "Upgraded legacy Java applications to modern frameworks, ensuring better maintainability, performance, and compatibility with current technologies.",
+            "Managed DevOps responsibilities, including deployment of production changes, monitoring system performance, and maintaining stable application environments across releases.",
         ],
     }
 ];
