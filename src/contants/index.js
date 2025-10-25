@@ -71,7 +71,7 @@ export const skills = [
 
 export const experiences = [
     {
-        title: "Java Full Stack Developer",
+        title: "Java Developer",
         company_name: "Accolite",
         icon: accolite,
         iconBg: "#accbe1",
